@@ -1,6 +1,7 @@
 var selectEl = document.getElementById("officeList");
 var DisplayElem = document.getElementById("cardDisplay");
 var mediaCard = document.getElementById("mediaCard");
+var mapCard = document.getElementById("map-card");
 
 
 selectEl.addEventListener('change', function(event){
@@ -17,6 +18,8 @@ selectEl.addEventListener('change', function(event){
       console.log(x);
       console.log("YAYYY!");
 
+
+      mediaCard.innerHTML = '';
 
       let links = [
         "https://photos.zillowstatic.com/fp/1ee9655f1f9362c0018d756753e42644-se_large_800_400.webp",
