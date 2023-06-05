@@ -4,36 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Estate App</title>
+    <title>RealtyReach-Agent Finder</title>
     <link rel="stylesheet" href="./assetsAgents/agents.css">
 </head>
 <body>
     <div class="main-container">
         <nav class="nav-bar">
-            <img src="" alt="logo" class="applogo"/>
-            <h2 class="appname">Real Estate App</h2>
+            <a href="../index.html"><img src="../Logos/Logo_White.PNG" alt="logo" class="applogo"/></a>
+            <a href="../index.html"><h1 class="appname">RealtyReach</h1></a>
 
             <ul class="menu">
-                <li><a class="menu-listings">Listings</a></li>
-                <li><a class="menu-openhouse">Open House</a></li>
-                <li><a class="menu-agent">Agent Finder</a></li>
-                <li><a class="menu-member">Members</a></li>
-                <li><a class="menu-agent-office">Agent Office</a></li>
+                <li><a class="menu-listings" href="../Listing/listings.html">Listings</a></li>
+                <li><a class="menu-openhouse" href="../Open House/openhouse.html">Open House</a></li>
+                <li><a class="menu-agent" href="../Agents/agents.html">Agent Finder</a></li>
+                <li><a class="menu-member" href="../member/member.html">Members</a></li>
+                <li><a class="menu-agent-office" href="../Office/index.html">Agent Office</a></li>
             </ul>
         </nav>
 
-</div>
+    </div>
 
-<div class="input-location">
-    <h3>Location</h3>
-    <input type="text" class="search-input" placeholder="City/Neighborhood" style="font-size:16px"/>
-</div>
+    <header id="header">
+        <h2>Agent Finder</h2>
+    </header>
 
-<div class="input-name">
-    <h3>Name</h3>
-    <input type="text" class="search-input" placeholder="Agent Name" style="font-size:16px"/>
+    <div class="container">
+        <div class="form-input">
+            <label for="location">Location</label>
+            <input type="text" id="location-input" class="autocomplete-input" placeholder="Enter Location">
+            <ul class="autocomplete-list" id="location-list"></ul>
+        </div>
+        <div class="form-input">
+            <label for="name">Agent Name</label>
+            <input type="text" id="name-input" class="autocomplete-input" placeholder="Enter Agent Name">
+            <ul class="autocomplete-list" id="agent-list"></ul>
+        </div>
+        <div class="form-input">
+            <label for="language">Language</label>
+            <select id="select-language" class="select-input">
+                <option value="" disabled selected>Select a Language...</option>
+                <option value="english">English</option>
+                <option value="french">French</option>
+                <option value="spanish">Spanish</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="display-agent">
+
+    </div>
+<!--
+<div>
+    <div class="input-location">
+        <h3>Location</h3>
+        <input type="text" class="search-input" placeholder="City/Neighborhood" style="font-size:16px"/>
+    </div>
+
+    <div class="input-name">
+        <h3>Agent Name</h3>
+        <input type="text" class="search-input" placeholder="Agent Name" style="font-size:16px"/>
+    </div>
+        
+    <div class="select-language">
+        <h3>Language</h3>
+        <select id="format-input" class="form-input">
+            <option value="" disabled selected>Select a format...</option>
+            <option value="english">English</option>
+            <option value="french">French</option>
+            <option value="spanish">Spanish</option>
+        </select>
+            
+    </div>
 </div>
-    
+-->
+
 </body>
     <script src="./assetsAgents/agents.js"></script>
 </html>

@@ -1,113 +1,116 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
-
 .nav-bar{
-        display:flex;
-        justify-content: space-evenly;
-        align-items: center;
-        height:60px;
-        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-        background-color: blue ;
-        color: lightgrey;
-    }
-
-    body{
-        background-color: #F3F6FA;
-    }
-
-
+      display:flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height:60px;
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+      background-color: blue ;
+      color: lightgrey;
+  }
+  body{
+      background-color: #F3F6FA;
+  }
 .menu{
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    width:50%;
-    font-family: "proxima-nova",sans-serif;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width:50%;
+  font-family: "proxima-nova",sans-serif;
 }
-
-
 #header{
-    text-align: center;
-    font-family: "proxima-nova",sans-serif;
-    font-size: 1.5rem;
-    background: url(./images/wp8179172.webp);
-	height:200px;
-	background-position:center center;
-	background-size:cover;
-
-}
-
-header h2{
-    font-size: large;
-    color: white;
-    text-align: center;
-    padding:50px;
-
-}
-
-
-#format-input{
   text-align: center;
-   
+  font-family: "proxima-nova",sans-serif;
+  font-size: 1.5rem;
+  background: url(./images/wp8179172.webp);
+  height:200px;
+  background-position:center center;
+  background-size:cover;
 }
-
+header h2{
+  font-size: large;
+  color: white;
+  text-align: center;
+  padding:50px;
+}
+#format-input{
+text-align: center;
+}
 .card{
-    width:100%;
-    text-align: center;
-    border-radius: 0.5rem;
+  width:100%;
+  text-align: center;
+  border-radius: 0.5rem;
 }
-
 h1{
-    text-align: center;
-    color: white;
-    background-color:blue;
+  text-align: center;
+  color: white;
+  background-color:blue;
 }
-
-
 .memberdata{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5rem;
-    text-align: left;
-    color: black;
-    padding:0.5rem;
-    width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  text-align: left;
+  color: black;
+  padding:0.5rem;
+  width: 100%;
+}
+.location {
+  text-align: center;
+  width: 26%;
+  margin-top: 10px;
+  margin-right: 5px;
+  float: right;
+  
+  position: relative;
+  border: 1px solid;
+}
+.mainCard {
+  width: 68%;
+  float: left;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-left: 10px;
+  position: relative;
+  
+}
+.mainSection {
+  width: 100%;
+  position: absolute;
+}
+.memberDetails {
+  width: 70%;
+  float: left;
+}
+.memberImg {
+  width: 30%;
+  float: right;
+  height:280px;
 }
 
+#contactDiv {
+  position: static;
+  bottom: 0; 
+  min-width: 20%;
+  display: block;
+}
 
-.location {
-    text-align: center;
-    width: 26%;
-    margin-top: 10px;
-    margin-right: 5px;
-    float: right;
-    border-radius: 20px;
-    position: relative;
-    border: 1px solid;
-  }
+#contactDiv input {
+  margin-top: 10px;
+}
 
-  .mainCard {
-    width: 68%;
-    float: left;
-    border: 1px solid black;
-    margin-top: 10px;
-    margin-left: 10px;
-    height: 310px;
-    border-radius: 10px;
-  }
+#contactsection{
+  position: fixed;  
+  width:100%;
+  bottom:0;
+  background-color: grey;
+}
 
-  .mainSection {
-    width: 100%;
-    position: absolute;
-  }
-
-  .memberDetails {
-    width: 70%;
-    float: left;
-  }
-  .memberImg {
-    width: 30%;
-    float: right;
-    height:280px;
-  }
+.contactlist{
+  display: inline;
+  float: right;
+  list-style: none;
+}
