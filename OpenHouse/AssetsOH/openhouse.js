@@ -2,6 +2,17 @@ let citySearch = document.getElementById('city-search');
 let citySearchBtn = document.getElementById('city-search-btn');
 let resultContainer = document.getElementById('result-container'); 
 
+var appnameEl = document.querySelector('.appname');
+var applogoEl = document.querySelector('.applogo');
+var menuEl = document.querySelector('.menu')
+
+
+var indexPage=()=>{
+  menuEl.setAttribute('href',document.location.replace('../index.html'))
+}
+appnameEl.addEventListener('click',indexPage)
+applogoEl.addEventListener('click',indexPage)
+
 var selectedCity = localStorage.getItem('selectedCity') || '';
 
 // event listener on city search button

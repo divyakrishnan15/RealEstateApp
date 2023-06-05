@@ -1,8 +1,9 @@
 *{
     margin:0;
     padding:0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
+
 
 .nav-bar{
     display:flex;
@@ -14,10 +15,15 @@
 }
 
 .menu{
-    list-style: none;
     display: flex;
     justify-content: space-evenly;
     width:50%;
+    list-style: none;
+    text-decoration: none;
+}
+
+.appname,.applogo,.menu{
+    cursor: pointer;
 }
 
 
