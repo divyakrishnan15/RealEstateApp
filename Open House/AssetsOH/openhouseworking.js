@@ -174,6 +174,26 @@ Listing IDs
         //  fetch(queryURL3)
         //  .then(res => res.json())
         //   .then(data => console.log(data))
+
+
+        // var googleData = function () {
+        //     var apiUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAxsA1zeJaYUQMKQHp7PHtXk7YnHTJhMT4=initMap";
+        //     document.querySelector(".google-maps").src = apiUrl;
+        //     initMap();
+        //   };
+        //   function initMap() {
+        //     const myLatLng = { lat: 43.7001, lng: -79.4163 };
+        //     const map = new google.maps.Map(document.getElementById("map"), {
+        //       zoom: 4,
+        //       center: myLatLng,
+        //     });
+        //     new google.maps.Marker({
+        //       position: myLatLng,
+        //       map,
+        //       title: "Hello World!",
+        //     });
+        //   }
+        //   window.initMap = initMap;
      
 
 
