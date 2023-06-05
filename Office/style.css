@@ -54,6 +54,16 @@ div#mediaCard{
     margin: 0%;
 }
 
+.intro{
+  
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    /* width: 30%; */
+    margin: 3rem;
+    color:navy;
+    
+}
+
 .card{
 
     width: 30%;
@@ -62,7 +72,7 @@ div#mediaCard{
     margin-top: 2rem;
     border-radius: 0.5rem;
     width: fit-content;
-    /* border:solid red; */
+  
 
 }
 
@@ -93,7 +103,7 @@ h2.officesName{
     align-content: center;
     margin-top: 5rem;
     align-items: center;
-    /* margin-left: 10rem; */
+   
     font-family: Georgia, 'Times New Roman', Times, serif;
    
    
@@ -112,20 +122,6 @@ select#officeList{
     position: absolute;
     float: left;
 }
-
-/* .filter{
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    align-content: center; 
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5rem;
-    background-color:navy;
-    color:lightgray;
-    position: absolute;
-    float: left;
-} */
 
 
 p.details {
@@ -153,7 +149,7 @@ p.details {
 div.cardImg{
     display: flex;
     border: solid navy; 
-    width:60%;
+    width:58%;
     position: absolute;
     margin-left:1rem;
   
@@ -168,10 +164,32 @@ div.cardImg{
         border-radius: 20px;
         position: relative;
         border: 1px solid;
-        /* margin-top: 0%; */
       
 }
 
+#footer {
+    position:fixed;
+    bottom:0%;
+    width:100%;
+    height:40px;   
+    background:navy;
+ }
+.footer-options{
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly;
+    width:100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color:lightgray;
+   
+
+}
+
+li{
+    color: lightgrey;
+}
 
 
 
