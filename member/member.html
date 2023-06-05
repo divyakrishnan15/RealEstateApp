@@ -24,31 +24,40 @@
     </nav>
   </div>
   <header id="header">
-    <h2 >Member Details</h2>
+    <h2>Members</h2>
     <section>
       <form id="search-form">
         <select id="format-input"></select>
       </form>
-      
     </section>
   </header>
   <section class="mainSection">
-    <div class="mainCard">
-
-    </div>
+    <div class="mainCard"> </div>
     <div class="location">
       <h4>Member location</h4>
-      <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"  marginwidth="0" id="gmap_canvas" 
-  src="https://maps.google.com/maps?width=520&;height=400&q=Space+Needle,scarborough&amp;output=embed">
-  </iframe>
+      <iframe id="iframeMap" width="100%" height="280px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        id="gmap_canvas"
+        src="https://maps.google.com/maps?width=520&;height=400&q=Space+Needle,canada&amp;output=embed">
+      </iframe>
     </div>
   </section>
 
+  <footer id="contactsection">
+    <nav class="contactDiv">
+      <h4>Contact Us</h4>
+      <p>Interested in a property?Drop us a note</p>
+      <p><a href="#" class="small-text">contact@realsearch.com</a></p>
+      <ul class="contactlist">
+        <li><input type="email" placeholder="Email Address" id="email"></li>
+        <li><input type="tel" placeholder="Contact Number" id="Contact-Number"></li>
+        <li><textarea placeholder="Message" maxlength="500" id="Message"></textarea></li>
+        <li><input type="submit" value="Submit Application"></li>
+      </ul>
+    </nav>
+
+  </footer>
+
   <script src="script.js"></script>
 </body>
-
-<!-- <footer id="footer">
-  <h3>Copyrights</h3>
-</footer> -->
 
 </html>
