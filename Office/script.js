@@ -2,7 +2,20 @@ var selectEl = document.getElementById("officeList");
 var DisplayElem = document.getElementById("cardDisplay");
 var mediaCard = document.getElementById("mediaCard");
 var mapCard = document.getElementById("map-card");
+var footer = document.getElementById("footer");
 
+function DefaultScreen(){
+//  mapCard.style.display="none"; 
+var introElem = document.createElement('div')
+
+var introText = document.createElement('p')
+introText.classList.add("intro")
+introText.innerHTML = "Hello! Welcome to the offices page of RR Realty. As a real estate group we have multiple offices scattered across USA. Feel free to browse through our agent offices shown in the dropbox above. "
+introElem.append(introText)
+mediaCard.append(introElem)
+
+}
+DefaultScreen()
 
 selectEl.addEventListener('change', function(event){
   event.preventDefault(); 
@@ -18,6 +31,9 @@ selectEl.addEventListener('change', function(event){
       console.log(x);
       console.log("YAYYY!");
 
+      if (x == "Show Options"){
+        DefaultScreen();
+      }
 
       mediaCard.innerHTML = '';
 
@@ -46,8 +62,8 @@ selectEl.addEventListener('change', function(event){
       officeName.innerHTML = String(data.bundle[x].OfficeName);
       console.log(officeName);
 
-      var cardImgMapContainer = document.createElement("div");
-      cardImgMapContainer.classList.add("cardImg");
+      var cardImgContainer = document.createElement("div");
+      cardImgContainer.classList.add("cardImg");
 
 
       var cardElem = document.createElement("div");
@@ -66,7 +82,8 @@ selectEl.addEventListener('change', function(event){
 
       var emailId = document.createElement("p");
       emailId.classList.add("details");
-      emailId.innerHTML = " email: " + String(data.bundle[x].OfficeEmail);
+      var emailEl = String(data.bundle[x].OfficeEmail);
+      emailId.innerHTML = " email: " + emailEl;
       console.log(emailId);
 
       var phone = document.createElement("p");
@@ -97,13 +114,16 @@ selectEl.addEventListener('change', function(event){
       imageContainer.append(imageElem)
 
       
-      cardImgMapContainer.append(cardElem,imageContainer)
-      divRow.append(cardImgMapContainer)
+      cardImgContainer.append(cardElem,imageContainer)
+      divRow.append(cardImgContainer)
     
       mediaCard.append(divRow);
      
+    var footerElem = document.createElement("div")
+      footerElem.id("footer");
 
-      
+      document.body.appendChild(footerElem)
+
     });
   return;
 
