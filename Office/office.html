@@ -13,15 +13,15 @@
 <div id ="wrapper">
     <div class="main-container">
         <nav class="nav-bar">
-            <img src="" alt="logo" class="applogo"/>
-            <h2 class="appname">Real Estate App</h2>
+            <a href="../index.html"><img src="./image/logo.png" alt="logo" class="applogo"/></a>
+            <a href="../index.html"><h2 class="appname">Real Estate App</h2></a>
 
             <ul class="menu">
                 <li><a href="../Listing/listings.html" class="menu-listings">Listings</a></li>
                 <li><a href="../OpenHouse/openhouse.html" class="menu-openhouse">Open House</a></li>
                 <li><a href="../Agents/agents.html" class= "menu-agent">Agent Finder</a></li>
                 <li><a href="../member/member.html" class="menu-member">Members</a></li>
-                <li><a href="../office/office.html" class="menu-agent-office">Agent Office</a></li>
+                <li><a href="../Office/office.html" class="menu-agent-office">Agent Office</a></li>
             </ul>
         </nav>
     <header>
@@ -59,16 +59,15 @@
 
 </section>
 
-    <script src="./script.js"></script>
-
-    <div id="map-card">
-        <div class="map-main">
-          <h3>Google city map</h3>
-          <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" id="gmap_canvas"
-            src="https://maps.google.com/maps?width=300&amp;height=200&amp;q=Space+Needle,unitedstatesofamerica&amp;output=embed">
-          </iframe>
-        </div>
-      </div>
+<div id="map-card">
+    <div class="map-main">
+      <h3>Google city map</h3>
+      <iframe id="iframeMap" width="100%" height="280px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        id="gmap_canvas"
+        src="https://maps.google.com/maps?width=520&;height=400&q=Space+Needle,canada&amp;output=embed">
+      </iframe>
+    </div>
+  </div>
 
     
       <div id="footer">
@@ -80,6 +79,8 @@
         </ul>
 
       </div>
+
+      <script src="./script.js"></script>
 </div>
 </body>
 </html>
