@@ -3,9 +3,11 @@
 ## Built a RealEstateApp using HTML,tailwind CSS,javascript,Web APIs(local storage),modal,google map api.
 
 ### Features of the app:
-* As a user, I want create Real Estate App, where user can search for Listing,Open house, Agents, His office and members involved.
+* As a user, I want create Real Estate App, where user can search for Listing, Open house, Agents, His office and members involved.
 
-* As a user, I should see all the listings available in the website
+* As a user, I want to be able to navigate to each page via the nav bar.
+
+* As a user, I should see all the listings available in the website.
 
 * As a user, When I search by City or MLS status(active/cancelled/expired) it should display the listings pertaining to it.
 
@@ -16,6 +18,7 @@
 * As a user, When I click on any card in listings page, it should display modal and the images should display in carousel with the same card details
 
 * As a user, When I click on pagination on the bottom of the listings page, it should display 5 items per page.
+
 
 
 
