@@ -183,35 +183,48 @@ submitBtn.addEventListener('click',function(event){
   let phoneInput = document.getElementById('phone');
   let emailInput = document.getElementById('email');
   let methodInput = document.getElementById('method');
+  let cityInput = document.getElementById('city');
 
   var name = nameInput.value;
   var phone = phoneInput.value;
   var email = emailInput.value;
   var method = methodInput.value;
+  var city = cityInput.value;
 
   localStorage.setItem('name', name);
   localStorage.setItem('phone', phone);
   localStorage.setItem('email', email);
   localStorage.setItem('method', method);
+  localStorage.setItem('city', city);
 
   nameInput.value = '';
   phoneInput.value = '';
   emailInput.value = '';
   methodInput.value = '';
+  cityInput.value = '';
 
-  alert('Form submitted successfully!');
-})
+// Show the modal
+var modal = document.getElementById('modal');
+modal.classList.remove('hidden');
+
+// Close the modal when "Close" button is clicked
+var modalCloseBtn = document.getElementById('modal-close');
+modalCloseBtn.addEventListener('click', function() {
+  modal.classList.add('hidden');
+});
+});
 
 viewSubmissionBtn.addEventListener('click',function(){
   var name = localStorage.getItem('name');
   var phone = localStorage.getItem('phone');
   var email = localStorage.getItem('email');
   var method = localStorage.getItem('method');
+  var city = localStorage.getItem('city');
 
-  if(name && phone && email){
+  if(name && phone && email && method && city){
     if(!submissionCard.classList.contains('submitted')){
     var cardContent = document.createElement('div');
-    cardContent.innerHTML = `<h3>Your Submission Details:</h3> <p>Name: ${name}</p> <p>Phone: ${phone}</p> <p>Email: ${email}</p> <p>Method of Contact: ${method}</p>`;
+    cardContent.innerHTML = `<h3>Your Submission Details:</h3> <p>Name: ${name}</p> <p>Phone: ${phone}</p> <p>Email: ${email}</p> <p>Method of Contact: ${method}</p> <p>City: ${city}</p>`;
     submissionCard.appendChild(cardContent);
     submissionCard.classList.add('submitted');
     }

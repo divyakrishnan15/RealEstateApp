@@ -70,25 +70,16 @@
 
 <div id="result-container" class="flex items-center justify-center min-h-screen bg-white border border-gray-200 rounded-lg shadow mx-28">
  </div>
-</div>
 
-<!-- <form class="w-full max-w-lg">
-    <div</div>
-    <div id="form-heading">
-    <h1>Contact Us</h1>
-    <h2>Please fill out the form below to book an open house.</h2>
-    </div>
-    <div id="form-content">
-    <label for="name">Name: </label>
-    <input type="text" id="name" name="name">
-    <label for="phone">Phone Number: </label>
-    <input type="number" id="phone" name="phone">
-    <label for="email">Email Address: </label>
-    <input type="email" id="email" name="email">
-    <button id="submit-btn">Submit</button>
-    </div>
-</form> -->
 <div class="flex justify-center m-8">
+    <!-- Modal -->
+<div id="modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+    <div class="bg-white w-64 p-4 rounded-lg shadow">
+      <h2 class="text-xl font-bold mb-4">Form submitted successfully!</h2>
+      <button id="modal-close" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Close</button>
+    </div>
+  </div>
+  
 <form class="w-full max-w-lg">
     <div class="flex justify-center font-bold text-xl mb-2">Contact Us</div>
     <div class="flex flex-wrap -mx-3 mb-6">
@@ -116,20 +107,38 @@
       </div>
     </div>
     <div class="flex flex-wrap -mx-3 mb-2">
-      <!-- <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-          City
-        </label>
-        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Albuquerque">
-      </div> -->
       <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="method">
-          Preferred Method of Contact
+        Contact Method
         </label>
         <div class="relative">
           <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="method">
+            <option selected>Choose an option</option>
             <option>Phone</option>
             <option>Email</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="city">
+          City
+        </label>
+        <div class="relative">
+          <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="city">
+            <option selected>Choose a city</option>
+            <option value=Everetteberg>Everetteberg</option>
+            <option value=Hirtheshire>Hirtheshire</option>
+            <option value="Port Leilanichester">Port Leilanichester</option>
+            <option value=Trinitymouth>Trinitymouth</option>
+            <option value=Schultzshire>Schultzshire</option>
+            <option value="South Lilianafort">South Lilianafort</option>
+            <option value="New Jofurt">New Jofurt</option>
+            <option value="Itzelbury">Itzelbury</option>
+            <option value="Tressaland">Tressaland</option>
+            <option value="New Granville">New Granville</option>
           </select>
           <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
