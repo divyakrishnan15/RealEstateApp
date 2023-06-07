@@ -48,12 +48,33 @@ a.menu-listings , a.menu-openhouse, a.menu-agent, a.menu-member, a.menu-agent-of
     text-shadow: 5px 5px 5px #f3f6fa;
 }
 .sign-in-form{
-
     float:right;
-    margin-right: 5rem;
-    font-size: 2rem;
-    color:rgb(80, 93, 106); 
+    margin-right: 3rem;
+    font-size: 1.5rem;
+    color:rgb(71, 82, 93); 
+    font-weight: bold;
     padding: 2rem;
+ 
+}
+.user-input {
+margin-left: 2rem;
+
+}
+.user-input-three{
+margin-left: 0.3rem;
+}
+input#name{
+    margin: 1rem;
+    border: dotted grey;
+
+}
+input#email{
+    margin: 1rem;
+    border: dotted grey;
+}
+input#message{
+    margin: 1rem;
+    border: dotted grey;
 }
 
 div.row{
@@ -69,15 +90,36 @@ div#mediaCard{
     margin: 0%;
 }
 
+.search{
+    bottom:0%
+}
+
 .intro{
   
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5rem;
-    /* width: 30%; */
     margin: 3rem;
     width: 50%;
     color:rgb(80, 93, 106);
     
+}
+
+.storage{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    margin: 3rem;
+    color: orangered;
+}
+.contact-us{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+}
+
+.submit-btn{
+   
+    text-align: center;
+    border-radius: 0.5rem;
+    background-color:lightgray;
 }
 
 .card{
@@ -178,7 +220,7 @@ div.cardImg{
     width:58%;
     position: absolute;
     margin-top:3rem;
-    /* margin-bottom: 5rem; */
+ 
   
 }
 
@@ -225,3 +267,165 @@ bottom: 0 auto;
     background-color: lightslategray; 
     border: solid;
 }
+
+
+@media (max-width: 1300) {
+    .searchedButton{
+    display: none;
+    }
+
+    .map-main{
+
+        width:100%;
+        margin-top: 3rem;
+        margin-right: 0%;
+        margin-left: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .storage{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 1.5rem;
+        margin: 1.5rem;
+        color: orangered;
+    }
+
+    
+}
+
+@media (max-width: 1000px) {
+
+    p.details{
+        color: rgb(70, 70, 70);
+        font-size: 1.2rem;
+        padding: 0%;
+    }
+    div.cardImg{
+        margin:0%;
+        width:100%
+    
+    }
+    .searchedButton{
+        display: none;
+    }
+    .image img{
+        display: 20px;
+        }
+        .map-main{
+
+            width:90%;
+            margin-top: 18rem;
+            flex-wrap: wrap;
+        }
+        .storage{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.2rem;
+            margin: 1.2rem;
+            color: orangered; 
+}
+
+}
+
+
+@media (max-width: 600px) {
+    #title {
+      font-size: 2rem;
+    }
+  
+    input#name,
+    input#email,
+    input#message {
+      width: 90%;
+      margin: 0.5rem;
+    }
+    select#officeList{
+        padding: 0%;
+        margin-right: 0%;
+        font-size: 1rem;
+    }
+    h2.officesName{
+   font-size: 1rem;
+   color:red;
+       
+    }
+    .storage{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 1rem;
+        margin: 1rem;
+        color: orangered;
+    }
+
+    .map-main{
+
+        width:90%;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+    }
+
+.searchedButton{
+   
+    display: none;
+}
+
+p.details{
+    color: black;
+    font-size: 0.8rem;
+}
+div.cardImg{
+    margin:0%;
+    width:100%;
+    padding: 0%;
+
+}
+.image img{
+display: none;
+}
+  }
+
+  
+  
+  @media (max-width: 400px) {
+    #title {
+      font-size: 1.5rem;
+    }
+  
+    input#name,
+    input#email,
+    input#message {
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+
+    select#officeList{
+        padding: 0%;
+        margin-right: 0%;
+        font-size: 1rem;
+    }
+    .storage{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 1rem;
+        margin: 0.2rem;
+        color: orangered;
+    }
+
+    .map-main{
+
+        width:100%;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+    }
+
+.searchedButton{
+   
+    display: none;
+}
+
+p.details{
+    color: black;
+    font-size: 0.8rem;
+}
+
+.image img{
+display: none;
+}
+  }
