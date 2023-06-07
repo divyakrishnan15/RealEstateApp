@@ -34,6 +34,7 @@
 ![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/5cbd826e-796f-4766-8980-53c58ff07708)
 
 * Open House
+Open Houses.jpeg
 
 * Agents
 
