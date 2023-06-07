@@ -7,6 +7,7 @@ var selectCityEl2 = document.querySelector('option')
 var appnameEl = document.querySelector('.appname')
 var applogoEl = document.querySelector('.applogo')
 var menuEl = document.querySelector('.menu')
+var menuEl = document.querySelector('.main-container')
 var menu_listitngEl = document.querySelector(".menu-listings");
 var listingsMenuEl = document.querySelector('.listing-btn')
 
