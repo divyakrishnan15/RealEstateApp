@@ -22,7 +22,7 @@ applogoEl.addEventListener('click',indexPage)
 
 
 function listingPage(){
-  menuEl.setAttribute('href',document.location.replace('./Listing/listings.html'))
+  menuEl.setAttribute('href',document.location.replace('./listings.html'))
 }
 listingsMenuEl.addEventListener('click',listingPage)
 
