@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 .main-container{
-    background-image: url(./image/MIDTOWN-MANHATTAN.jpg);
+    background-image: url(./image/office-one.jpg);
     background-size: cover;
     text-align: center;
-    height: 20rem;
+    height: 25rem;
     background-position: center center;
 
 }
@@ -18,7 +18,7 @@
     align-items: center;
     height:60px;
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-    background-color: navy;
+    background-color: grey;
     color: lightgrey;
 }
 
@@ -26,12 +26,17 @@ body{
     background-color: #f3f6fa;
 }
 
-.menu{
+ul.menu{
     list-style: none;
     display: flex;
     justify-content: space-evenly;
     width:50%;
     font-family: Georgia, 'Times New Roman', Times, serif;
+   
+}
+a.menu-listings , a.menu-openhouse, a.menu-agent, a.menu-member, a.menu-agent-office {
+    color: lightgray;
+    font-weight: bold;
 }
 
 #title{
@@ -39,15 +44,25 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.5rem;
     margin-top: 2rem;
-    color: rgb(20, 20, 230);
+    color: rgb(43, 43, 45);
     text-shadow: 5px 5px 5px #f3f6fa;
 }
+.sign-in-form{
+
+    float:right;
+    margin-right: 5rem;
+    font-size: 2rem;
+    color:rgb(80, 93, 106); 
+    padding: 2rem;
+}
+
 div.row{
     display: flex;
     flex-direction: column;
     width:55%;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    margin-left:2rem;
     }
 
 div#mediaCard{
@@ -57,19 +72,20 @@ div#mediaCard{
 .intro{
   
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     /* width: 30%; */
     margin: 3rem;
-    color:navy;
+    width: 50%;
+    color:rgb(80, 93, 106);
     
 }
 
 .card{
 
     width: 30%;
-    margin-left:1rem;
+    margin-left:0.5rem;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-radius: 0.5rem;
     width: fit-content;
   
@@ -77,14 +93,16 @@ div#mediaCard{
 }
 
 h2.officesName{
-    width:auto;
-    position: absolute;
-    margin-left: 2rem;
+    width:58%;
+    position: relative;
+    border-radius: 1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2rem;
     text-align: center;
-    background-color: navy;
-    color: lightgrey;
+    background-color: rgb(76, 75, 75);
+    color: lightgray;
+    
+   
 }
 
 .details{
@@ -117,10 +135,12 @@ select#officeList{
     align-content: center; 
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5rem;
-    background-color:navy;
+    font-weight: bold;
+    background-color:rgb(65, 64, 64);
     color:lightgray;
     position: absolute;
     float: left;
+    border: none;
 }
 
 
@@ -144,22 +164,31 @@ p.details {
     float: right;
 }
 
-
+.default-image{
+height:30rem;
+width:45rem;
+margin:2rem;
+}
 
 div.cardImg{
     display: flex;
-    border: solid navy; 
+    border: dotted 1px grey; 
+    background-color: lightgrey;
+    border-radius: 1rem;
     width:58%;
     position: absolute;
-    margin-left:1rem;
+    margin-top:3rem;
+    /* margin-bottom: 5rem; */
   
 }
 
 .map-main{    
 
         text-align: center;
-        width: 30%;
+        height: 30%;
+        width: 25%;
         margin-right: 3rem;
+        margin-bottom: 3rem;
         float: right;
         border-radius: 20px;
         position: relative;
@@ -167,30 +196,32 @@ div.cardImg{
       
 }
 
-#footer {
-    position:fixed;
-    bottom:0%;
-    width:100%;
-    height:40px;   
-    background:navy;
- }
-.footer-options{
-    list-style: none;
-    display: flex;
-    justify-content:space-evenly;
-    width:100%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color:lightgray;
+
+.applogo{
+    height:50px;
+    width: 50px;
+    border-radius: 50px;
+    border:1px solid white;
+    padding:5px;
+    background-color: #59677f;
+    margin-left:-80px;
+  }
+
+.searchHistory {
+bottom: 0 auto;
+}
+
+.searchedButton{
    
-
+    margin-top: 5rem;
+    padding:0.2rem;
+    margin-right: 1rem;
+    text-align:center;
+    float: right;
+    font-size:1.3rem;
+    justify-content: center;
+    align-items: center;  
+    color: #f3f6fa;
+    background-color: lightslategray; 
+    border: solid;
 }
-
-li{
-    color: lightgrey;
-}
-
-
-
-

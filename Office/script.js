@@ -3,19 +3,33 @@ var DisplayElem = document.getElementById("cardDisplay");
 var mediaCard = document.getElementById("mediaCard");
 var mapCard = document.getElementById("map-card");
 var footer = document.getElementById("footer");
-
+var iframeMap = document.querySelector("#iframeMap");
+var officeCities = ["wyoming", "West Virginia", " North Carolina ", " Wisconsin", "Arkansas", " California", "Texas", "New Hampshire", "Arkansas", "Massachussets "];
+var mapMain = document.getElementsByClassName("map-main");
+var gmapCanvas = document.getElementById("gmap_canvas");
+var searchHistory = document.getElementById("searchHistory");
+var mainContainer = document.getElementById("main-container")
 function DefaultScreen(){
-//  mapCard.style.display="none"; 
-var introElem = document.createElement('div')
 
+var introElem = document.createElement('div')
 var introText = document.createElement('p')
 introText.classList.add("intro")
-introText.innerHTML = "Hello! Welcome to the offices page of RR Realty. As a real estate group we have multiple offices scattered across USA. Feel free to browse through our agent offices shown in the dropbox above. "
+introText.innerHTML = "Hello! Welcome to the offices page of Realty Reach. We have multiple office space scattered across USA that focus on sustainable and eco friendly designs. When you choose Realty Reach, we make it our personal mission to ensure you reach your forever home for the best deals available in the market.  Feel free to walk into any of our spacious and welcoming office spaces anytime from Monday to Saturday between 8am-8pm. Check out the closest office to you by choosing your State/Province in the dropbox above. "
+var fillForm = document.getElementById("sign-in")
+fillForm.classList.add("sign-in-form")
+introElem.append(fillForm)
+var imageElem = document.createElement('img')
+imageElem.classList.add("default-image")
+imageElem.src = "https://officesnapshots.com/wp-content/uploads/2016/01/ovg-office-design-2.jpg"
 introElem.append(introText)
 mediaCard.append(introElem)
-
+mediaCard.append(imageElem)
+mapCard.style.display = "none";
+iframeMap.style.display = "none";
+// gmapCanvas.style.display = "none";
 }
-DefaultScreen()
+
+DefaultScreen();
 
 selectEl.addEventListener('change', function(event){
   event.preventDefault(); 
@@ -30,17 +44,16 @@ selectEl.addEventListener('change', function(event){
       let x = selectEl.value;
       console.log(x);
       console.log("YAYYY!");
-
-      if (x == "Show Options"){
+      if (x == 10){
+        location.reload();
         DefaultScreen();
       }
-
       mediaCard.innerHTML = '';
 
       let links = [
         "https://photos.zillowstatic.com/fp/1ee9655f1f9362c0018d756753e42644-se_large_800_400.webp",
         "https://www.jerde.com/thumbs/800x0/files/wonly/v2-jerde-hires-john-pauline_15899.jpg" , 
-        "https://beverlyboy.com/wp-content/uploads/2018/03/photodune-21479704-charlotte-north-carolina-xxl-1024x683.jpg" ,
+        "https://outofoffice.blog/wp-content/uploads/2021/01/Things-to-do-in-Charlotte-North-Carolina-1.jpg" ,
         "https://tse1.explicit.bing.net/th?id=OIP.IVdvLAS5113bzF-JOm2BDwHaFj&pid=Api&P=0&h=180" ,
         "https://3.bp.blogspot.com/-mbBCr-PLf3s/Wj4y1LqF2AI/AAAAAAAAAuY/yVHqruI3cS43oKtVwdLq2s8oHIp5PDD_gCPcBGAYYCw/s1600/Archkala%2B-%2BReal%2BEstate%2BOffice004.jpg" ,
         "http://a.mktgcdn.com/p/8ge9G0oXB07QyWcoRi3CUWkxIsCzRP-A6YcW9RQwKwg/260x260.jpg" ,
@@ -52,8 +65,11 @@ selectEl.addEventListener('change', function(event){
       ];
 
 
-      var j = x;
 
+      var j = x;
+      
+     var footerElem= document.getElementById("footer")
+     footerElem.style.display="none";
       var divRow = document.createElement("div");
       divRow.classList.add("row")
 
@@ -91,15 +107,11 @@ selectEl.addEventListener('change', function(event){
       phone.innerHTML = " phone No.: " + String(data.bundle[x].OfficePhone);
       console.log(phone);
 
-      var worksWith = document.createElement("p");
-      worksWith.classList.add("details");
-      worksWith.innerHTML= "Works with : "+ String(data.bundle[x].SyndicateTo);
-
       var officeStatus = document.createElement("p");
       officeStatus.classList.add("details");
       officeStatus.innerHTML = "Office status : "+ String(data.bundle[x].OfficeStatus)
 
-      cardElem.append(addressOne, province, emailId, phone, officeStatus, worksWith);
+      cardElem.append(addressOne, province, emailId, phone, officeStatus);
 
      
       divRow.append(officeName)
@@ -113,19 +125,43 @@ selectEl.addEventListener('change', function(event){
       imageElem.src = links[j]
       imageContainer.append(imageElem)
 
-      
+      mapCard.style.display = "block";
+      iframeMap.style.display = "block";
+     
+      iframeMap.src = "https://maps.google.com/maps?width=520&;height=400&q=Space+Needle," + officeCities[x] + "&output=embed";
+
       cardImgContainer.append(cardElem,imageContainer)
       divRow.append(cardImgContainer)
     
       mediaCard.append(divRow);
      
-    var footerElem = document.createElement("div")
-      footerElem.id("footer");
 
-      document.body.appendChild(footerElem)
+      var searchHistory = [];
+      var searchedStates = String(data.bundle[x].OfficeStateOrProvince);
+      localStorage.setItem("searchedStates",searchedStates );
+      console.log(searchedStates)
+  
+      searchHistory.push(searchedStates);
+  
+      for (var i=0; i<searchHistory.length; i++){
+        var searchStates = searchHistory[i];
+        console.log("CHECKING");
+        console.log(searchStates);
+        var buttonEl = document.createElement("button");
+        buttonEl.classList.add("searchedButton")
+        buttonEl.textContent = searchStates;
+        mediaCard.appendChild(buttonEl)
+      }
 
     });
   return;
 
 
 });
+
+
+
+function SearchedOffices (){
+
+}
+
