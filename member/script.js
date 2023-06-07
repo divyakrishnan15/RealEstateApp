@@ -67,7 +67,7 @@ function displayMemberDetails(licenseNumber) {
       stateEl.classList.add("memberdata");
       statusEl.classList.add("memberdata");
     
-      memberImg.setAttribute("src", "./images/" + localStorage.getItem(licenseNumber));
+      memberImg.setAttribute("src", "./member/images/" + localStorage.getItem(licenseNumber));
       memberNameEl.textContent = "FullName: " + realEstateMemberData[i].MemberFullName;
       jobTitleEl.textContent = "JobTitle: " + realEstateMemberData[i].JobTitle;
       officeNameEl.textContent = "Office: " + realEstateMemberData[i].OfficeName;
@@ -92,7 +92,7 @@ function displaydefaultImage() {
   memberCardEl.classList.add("card");
   var memberImg = document.createElement("img");  
   memberImg.classList.add("defaultImg")
-  memberImg.setAttribute("src", "./images/shutterstock_615138353.jpg");
+  memberImg.setAttribute("src", "./member/images/shutterstock_615138353.jpg");
   memberCardEl.append(memberImg);
   mainCardEl.append(memberCardEl);
  
