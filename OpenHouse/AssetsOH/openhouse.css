@@ -31,6 +31,14 @@
     align-items: center;
 }
 
+#city-search{
+    display: flex;
+}
+
+#city-search-btn{
+    display: inline-block;
+    margin-left: 10px;
+}
 
 
 
@@ -63,7 +71,7 @@
     justify-content: center;
     align-items: center;
 }
-h1{
+/* h1{
     display: inline-block;
     text-align: center;
     margin: 5%;
@@ -98,10 +106,21 @@ h1{
 .listing-image{
     display: flex;
     justify-content: end;
-}
-img{
+} */
+/* img{
     width: 500px;
     height: 500px;
-}
+} */
+
+#result-container {
+    display: flex;
+  }
+  
+  @media (max-width: 640px) {
+    #result-container {
+      flex-direction: column;
+    }
+  }
+
 
 
