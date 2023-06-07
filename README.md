@@ -27,9 +27,21 @@
 
 * As a user, when I click on a member, the member location will be displayed to the right of the page in google maps.
 
+* Office Page: As a member, when I click on the "Agent office" option on the navigation bar, I am redirected to the landing page of Agent office
 
+* As a user, in the agent office landing page, I can fill in my information in the form on the side and it will be stored in the local storage for Realty Reach to contact me.
 
+* As a user, I can select a State/Province of my choice from the dropdown menu on the landing page 
 
+* As a user, when I click on the dropdown menu, I can see the names of states/provinces in which Realty Reach has office spaces
+
+* As a user, when I choose the state/province , I can see the details of the office space, such as the office name, address, contact details
+
+* As a user, I can see a picture next to the office details 
+
+* As a user, when I choose the state/province, I can see the location of the office as displayed to the right of the page in google maps.
+
+* As a user, when I click on the "Select" option, I am redirected to the landing page.
 
 
 
@@ -86,7 +98,17 @@ Open Houses.jpeg
 * googlemap location
 ![location](https://github.com/divyakrishnan15/RealEstateApp/assets/130253087/ecb57139-4e6b-440d-853a-8dd205b81555)
 
+![landing-page-office](https://github.com/divyakrishnan15/RealEstateApp/assets/129353324/e92912e9-97a8-4579-a868-0fa286965d6d)
 
+Image of the landing page
+
+![clicking-options](https://github.com/divyakrishnan15/RealEstateApp/assets/129353324/7282d0dd-d7fb-44e1-8bb8-9edcebe6c089)
+
+Dropdown menu
+
+![showing-offices-info](https://github.com/divyakrishnan15/RealEstateApp/assets/129353324/6ee0b5da-a2a7-47cf-88bd-49220e4c59e0)
+
+Offices data
 
 
 
