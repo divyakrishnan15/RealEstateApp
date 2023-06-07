@@ -48,6 +48,12 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.menu-listings:hover{
+  height: 2px;
+  width:50px;
+  color: #47d5eb;
+}
+
 a{
   color:#F3F6FA;
    text-decoration: none;
@@ -135,5 +141,6 @@ h1{
 
  #footer{
   position: relative;
-    margin-top: 35%;
+  width: 100%;
+  float: right;
 } 
