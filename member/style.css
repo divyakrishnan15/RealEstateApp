@@ -3,6 +3,29 @@
   padding:0;
   box-sizing: border-box;
 }
+
+.element-selector {
+
+  all: revert;
+}
+
+.applogo{
+  height:50px;
+  width: 50px;
+  border-radius: 50px;
+  border:1px solid white;
+  padding:5px;
+  background-color: #59677f;
+  margin-left:-80px;
+}
+
+#para{
+  margin-top: 3%;
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
 .nav-bar{
       display:flex;
       justify-content: space-evenly;
@@ -12,9 +35,11 @@
       background-color: #59677f;
       color: white;
   }
+
   body{
       background-color: #F3F6FA;
   }
+
 .menu{
   list-style: none;
   display: flex;
@@ -25,14 +50,15 @@
 
 a{
   color:#F3F6FA;
+   text-decoration: none;
 }
 
 #header{
   text-align: center;
   font-family: "proxima-nova",sans-serif;
   font-size: 1.5rem;
-  background: url(./images/wp8179172.webp);
-  height:200px;
+  background: url(./images/defaultimg.jpg);
+  height:250px;
   background-position:center center;
   background-size:cover;
 }
@@ -70,8 +96,6 @@ h1{
   margin-top: 10px;
   margin-right: 5px;
   float: right;
-  
-  position: relative;
   border: 1px solid;
 }
 .mainCard {
@@ -87,6 +111,10 @@ h1{
   width: 100%;
   position: absolute;
 }
+.member-location{
+  width: 100%;
+  position: absolute;
+}
 .memberDetails {
   width: 70%;
   float: left;
@@ -97,43 +125,7 @@ h1{
   height:280px;
 }
 
-#contactDiv {
-  position: static;
-  bottom: 0; 
-  min-width: 20%;
-  display: block;
-}
-
-#contactDiv input {
-  margin-top: 10px;
-}
-
-#contactsection{
-  position: fixed;  
-  width:100%;
-  bottom:0;
-  background-color: #59677f;
-  color: white;
-}
-
-.contactlist{
-  display: inline;
-  float: right;
-  list-style: none;
-  width: 10%;
-}
-
-
-.applogo{
-  height:50px;
-  width: 50px;
-  border-radius: 50px;
-  border:1px solid white;
-  padding:5px;
-  background-color: #59677f;
-  margin-left:-80px;
-}
-
-a {
-  text-decoration: none;
+.defaultImg {
+  width: 100%;
+  height:300px;
 }

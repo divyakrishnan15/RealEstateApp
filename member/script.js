@@ -2,6 +2,7 @@ var searchInputSubmitEl = document.querySelector('#button');
 var mainCardEl = document.querySelector(".mainCard");
 var iframeMap = document.querySelector("#iframeMap");
 var realEstateMemberData;
+var memberDetails = [];
 var realEstateMemberCities = ["Iowa", "Michigan", " Lincoln", " Nashville", "Northumberland", " Kentucky", "Arizona", "Hawaii", "Colorado", "Hampshire UK"];
 
 document.querySelector("#format-input").addEventListener('change', onSelectMemeber);
@@ -21,10 +22,11 @@ function getMemberData() {
     })
 }
 
+// creating the dropdown for displaying member names with license number as values
 function buildMemberDropDown(realEstateMemberData) {
    var searchformEl = document.getElementById('format-input');
   var optEl = document.createElement('option');
-  optEl.value = "";
+  optEl.value = "0";
   optEl.innerHTML = "Select a member";
   searchformEl.append(optEl);
   for (let i = 0; i < 10; i++) {
@@ -53,8 +55,7 @@ function displayMemberDetails(licenseNumber) {
       var cityEl = document.createElement("p");
       var stateEl = document.createElement("p");
       var statusEl = document.createElement("p");
-      var memberImg = document.createElement("img");
-      
+      var memberImg = document.createElement("img");      
 
       memberCardEl.classList.add("card");
       memberDetails.classList.add("memberDetails")
@@ -66,7 +67,7 @@ function displayMemberDetails(licenseNumber) {
       stateEl.classList.add("memberdata");
       statusEl.classList.add("memberdata");
     
-      memberImg.setAttribute("src", "./images/" + licenseNumber + ".jpg");
+      memberImg.setAttribute("src", "./images/" + localStorage.getItem(licenseNumber));
       memberNameEl.textContent = "FullName: " + realEstateMemberData[i].MemberFullName;
       jobTitleEl.textContent = "JobTitle: " + realEstateMemberData[i].JobTitle;
       officeNameEl.textContent = "Office: " + realEstateMemberData[i].OfficeName;
@@ -78,9 +79,39 @@ function displayMemberDetails(licenseNumber) {
       memberDetails.append(jobTitleEl, officeNameEl, cityEl, stateEl, statusEl, memberImg);
       memberCardEl.append(memberNameEl,memberDetails, memberImg)
       mainCardEl.append(memberCardEl);
+      return;
+    } else if ("0" == licenseNumber){
+      mainCardEl.style.display = "block";
+      displaydefaultImage();
+      return;
     }
   }
 }
+function displaydefaultImage() {
+   var memberCardEl = document.createElement("div");
+  memberCardEl.classList.add("card");
+  var memberImg = document.createElement("img");  
+  memberImg.classList.add("defaultImg")
+  memberImg.setAttribute("src", "./images/shutterstock_615138353.jpg");
+  memberCardEl.append(memberImg);
+  mainCardEl.append(memberCardEl);
+ 
+}
+function addMemberImageNameToLocalStorage() {
+    localStorage.setItem('0013285317480','0013285317480.jpg');
+    localStorage.setItem('1575576983808','1575576983808.jpg');
+    localStorage.setItem('2076281181422','2076281181422.jpg');
+    localStorage.setItem('2398326509801','2398326509801.jpg');
+    localStorage.setItem('2758466192620','2758466192620.jpg');
+    localStorage.setItem('4746491045842','4746491045842.jpg');
+    localStorage.setItem('5330163492387','5330163492387.jpg');
+    localStorage.setItem('8045134567816','8045134567816.jpg');
+    localStorage.setItem('9290368553077','9290368553077.jpg');
+    localStorage.setItem('9755831298164','9755831298164.jpg');
+    
+  }  
+
+
 
 function onSelectMemeber(event) {
   var inputValueEl = event.target.value;
@@ -88,5 +119,7 @@ function onSelectMemeber(event) {
 
 }
 
-mainCardEl.style.display = "none";
+
 getMemberData();
+displaydefaultImage();
+addMemberImageNameToLocalStorage();

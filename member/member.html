@@ -5,22 +5,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Member agents</title>
+  <title>Members</title>
   <link rel="stylesheet" href="style.css">
+  
 </head>
 
 <body>
   <div class="main-container">
     <nav class="nav-bar">
-      <a href="../index.html" ><img src="./images/logo.png" alt="logo" class="applogo" /></a> 
-      <a href="../index.html" ><h2 class="appname">Realty Reach</h2></a>
+      <a href="../index.html"><img src="./images/logo.png" alt="logo" class="applogo" /></a>
+      <a href="../index.html">
+        <h2 class="appname">Realty Reach</h2>
+      </a>
       <ul class="menu">
         <li><a href="../Listing/listings.html" class="menu-listings">Listings</a></li>
         <li><a href="../Open House/openhouse.html" class="menu-openhouse">Open House</a></li>
         <li><a href="../Agents/agents.html" class="menu-agent">Agent Finder</a></li>
         <li><a href="../member/member.html" class="menu-member">Members</a></li>
-        <li><a href="../Office/index.html" class="menu-agent-office">Agent Office</a></li>
-    </ul>
+        <li><a href="../Office/office.html" class="menu-agent-office">Agent Office</a></li>
       </ul>
     </nav>
   </div>
@@ -33,32 +35,34 @@
     </section>
   </header>
   <section class="mainSection">
-    <div class="mainCard"> </div>
-    <div class="location">
-      <h4>Member location</h4>
-      <iframe id="iframeMap" width="100%" height="280px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-        id="gmap_canvas"
-        src="https://maps.google.com/maps?width=520&;height=400&q=Space+Needle,canada&amp;output=embed">
-      </iframe>
+    <div id="para">
+      <div class="para">Whether you’re searching for a new home or an investment property, securing real estate can be a
+        tricky, yet exciting, process.But the first step to purchasing any property is simple. And it doesn’t involve
+        online searches, in-person showings, or even meetings with your realtor. Rather, prospective buyers should begin
+        by making a list of the features they simply can’t live without.We’ll match you with a Realty Reach advisor who
+        knows your area best.We have a dedicated team of dynamic security planners, lead application assistants and
+        software developers behind Realty Reach.
+      </div>
+    </div>
+
+    <div class="member-location">
+      <div class="mainCard">
+       
+      </div>
+      <div class="location">
+
+        <h4>Member location</h4>
+        <iframe id="iframeMap" width="100%" height="280px" frameborder="0" scrolling="no" marginheight="0"
+          marginwidth="0" id="gmap_canvas"
+          src="https://maps.google.com/maps?width=520&;height=400&q=Space+Needle,canada&amp;output=embed">
+        </iframe>
+      </div>
     </div>
   </section>
-
-  <footer id="contactsection">
-    <nav class="contactDiv">
-      <h3>Contact Us</h3>
-      <p>Interested in a property?Drop us an email to:</p>
-      <p><a href="#" class="small-text">contact@realtyreach.com</a></p>
-      <ul class="contactlist">
-        <li><input type="email" placeholder="Email Address" id="email"></li>
-        <li><input type="tel" placeholder="Contact Number" id="Contact-Number"></li>
-        <li><textarea placeholder="Message" maxlength="500" id="Message"></textarea></li>
-        <li><input type="submit" value="Submit Application"></li>
-      </ul>
-    </nav>
-
-  </footer>
+  
 
   <script src="script.js"></script>
 </body>
+
 
 </html>
