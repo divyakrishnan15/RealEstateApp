@@ -16,8 +16,12 @@
 }
 
 img{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: #f3f6fa;
+    border-style: solid;
 }
 
 a{
@@ -32,76 +36,70 @@ a{
     width:60%;
 }
 
-header h2 {
+header {
    width: 100%;
-   height: 120px;
    display: flex;
    justify-content: center;
    align-items: center;
+   font-size: 28px;
+   font-weight: bold;
+   height:200px;
+   background-image: url(reagent.jpg);
+   background-position:center center;
+   background-size:cover;
+   background-color: #59677f;
+   height:200px;
+   background-position:center center;
 }
 
-.container{
-    width: 100%;
-    margin-left: 5%;
-    display: flex;
+input {
     justify-content: center;
-    align-items: center;
+    padding: 20px;
+    margin: 25px;
+    font-size: 20px;
+    border-style: none;
+}
+
+.agent-display{
+  margin: 50px;
+  width:75%;
+  background-color: #9fa8b7;
+  border-color: #59677f;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  box-shadow: 0px 10px 13px -7px #000000;
+}
+
+h4{
+    margin: 50px;
+    font-weight: bold;
+    width:100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #d4dae2;
+    border-radius: 0.5rem;
+}
+
+p{
+    margin-left: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+footer{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#59677f;
+    color: #F3F6FA
     
 }
 
-label{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.form-input{
-    width: 100%;
-    height: 120px;
-    font-size: 16px;
-}
-
-.autocomplete-input{
-    width: 200px;
-    padding: 15px 15px;
-    border-color: #59677f;
-    font-weight: bold;
-    background-color: #FFF;
-}
- 
-.autocomplete-list{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #FFF;
-    width: 200px;
-    max-height: 200px;
-    overflow-y: auto;
-    overflow-x: hidden;
-
-}
-
-.autocomplete-list li{
-    color: #000000;
-    background-color: rgb(188, 194, 202);
-    padding: 15px;
-    width: 200px;
-    cursor: pointer;
-}
-
-.select-input{
-    width: 200px;
-    padding: 15px 15px;
-    border-color: #59677f;
-    font-weight: bold;
-    background-color: #FFF;
-}
-
-option{
-    color: #000000;
-    background-color: rgb(188, 194, 202);
-    padding: 15px;
-    width: 200px;
-    max-height: 200px;
-    cursor: pointer;
+.footer{
+    margin: 5px;
+    align-items:center;
 }
