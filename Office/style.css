@@ -7,7 +7,7 @@
     background-image: url(./image/office-one.jpg);
     background-size: cover;
     text-align: center;
-    height: 30rem;
+    height: 25rem;
     background-position: center center;
 
 }
@@ -47,13 +47,22 @@ a.menu-listings , a.menu-openhouse, a.menu-agent, a.menu-member, a.menu-agent-of
     color: rgb(43, 43, 45);
     text-shadow: 5px 5px 5px #f3f6fa;
 }
+.sign-in-form{
+
+    float:right;
+    margin-right: 5rem;
+    font-size: 2rem;
+    color:rgb(80, 93, 106); 
+    padding: 2rem;
+}
 
 div.row{
     display: flex;
     flex-direction: column;
     width:55%;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    margin-left:2rem;
     }
 
 div#mediaCard{
@@ -66,6 +75,7 @@ div#mediaCard{
     font-size: 1.5rem;
     /* width: 30%; */
     margin: 3rem;
+    width: 50%;
     color:rgb(80, 93, 106);
     
 }
@@ -154,7 +164,11 @@ p.details {
     float: right;
 }
 
-
+.default-image{
+height:30rem;
+width:45rem;
+margin:2rem;
+}
 
 div.cardImg{
     display: flex;
@@ -163,16 +177,18 @@ div.cardImg{
     border-radius: 1rem;
     width:58%;
     position: absolute;
-    margin-top:2rem;
-    margin-bottom: 2rem;
+    margin-top:3rem;
+    /* margin-bottom: 5rem; */
   
 }
 
 .map-main{    
 
         text-align: center;
-        width: 30%;
+        height: 30%;
+        width: 25%;
         margin-right: 3rem;
+        margin-bottom: 3rem;
         float: right;
         border-radius: 20px;
         position: relative;
@@ -180,29 +196,6 @@ div.cardImg{
       
 }
 
-#footer {
-    position:fixed;
-    bottom:0%;
-    width:100%;
-    height:2rem;   
-    background:grey;
- }
-.footer-options{
-    list-style: none;
-    display: flex;
-    justify-content:space-evenly;
-    width:100%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color:lightgray;
-   
-
-}
-
-li{
-    color: lightgrey;
-}
 
 .applogo{
     height:50px;
@@ -214,4 +207,21 @@ li{
     margin-left:-80px;
   }
 
+.searchHistory {
+bottom: 0 auto;
+}
 
+.searchedButton{
+   
+    margin-top: 5rem;
+    padding:0.2rem;
+    margin-right: 1rem;
+    text-align:center;
+    float: right;
+    font-size:1.3rem;
+    justify-content: center;
+    align-items: center;  
+    color: #f3f6fa;
+    background-color: lightslategray; 
+    border: solid;
+}
