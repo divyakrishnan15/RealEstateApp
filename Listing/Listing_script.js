@@ -1,59 +1,67 @@
 var appnameEl = document.querySelector(".appname");
 var applogoEl = document.querySelector(".applogo");
 var menuEl = document.querySelector(".menu");
-var menu_listitngEl = document.querySelector(".menu-listings");
+var menulistingsEl = document.querySelector(".menu-listings");
 var selectCitydropdownEl1 = document.querySelector(".select-dd");
 var selectMlsStatusdropdownEl1 = document.querySelector(".select-mls");
 var listMainEl = document.querySelector(".list-main");
 var listCardElement = document.querySelectorAll(".list-card");
 var exploreBtnEl = document.querySelectorAll(".list-explore-btn");
-var imgEl = document.querySelectorAll(".list-img");
+var imgEl = document.querySelectorAll('.list-img')
 var modalMainEl = document.querySelector("#myModal");
 var modalContentEl = document.querySelector(".modal-content");
 var modalCloseBtnEl = document.querySelector(".closebtn");
 var heartOpenEl = document.querySelector(".fa-heart-o");
 var heartFilledEl = document.querySelector(".fa-heart");
 var favouritesEl = document.querySelector(".favourites");
-var pageBtn1El = document.querySelector(".page1");
-var pageBtn2El = document.querySelector(".page2");
+var pageBtn1El =document.querySelector('.page1')
+var pageBtn2El =document.querySelector('.page2')
+
+
+
 
 var city = "";
 var cityValue = "";
 var Apidata = [];
-var pageData = [];
+var pageData=[]
 var openHeartListEl = document.createElement("div");
 var FilteredByCity_listId = [];
-var FilteredByCity_MlsStatus = [];
-var Selected_ListId = "";
-const itemsPerPage = 5;
-var pageNumber = 1;
-var pagination = false;
-var startIndex = 0;
-var endIndex = 0;
+var FilteredByCity_MlsStatus=[]
+var Selected_ListId =''
+const itemsPerPage =5
+var pageNumber=1
+var pagination=false
+var startIndex =0
+var endIndex =0
+
 
 var listingLSdata = JSON.parse(localStorage.getItem("ListingLS")) || {};
+modalMainEl.style.dispaly = "none";
 
-
-function changePage(page) {
-  pageNumber = page;
+function changePage(page){
+  pageNumber=page
 }
 
-var indexPage = (event) => {
-  menuEl.setAttribute("href", document.location.replace("../index.html"));
-};
-appnameEl.addEventListener("click", indexPage);
-applogoEl.addEventListener("click", indexPage);
+
+var listingurl = document.location.href
 
 
-menu_listitngEl.addEventListener('click',listingPage)
-function listingPage(){
-  menuEl.setAttribute("href",document.location.replace('./listings.html'))
+var indexPage=(event)=>{
+  menuEl.setAttribute('href',document.location.replace('../index.html'))
 }
+appnameEl.addEventListener('click',indexPage)
+applogoEl.addEventListener('click',indexPage)
+
+
+function listingsPage(){
+  menuEl.setAttribute('href',listingurl)
+}
+menulistingsEl.addEventListener('click',listingsPage)
 
 
 //get city name from drop down filter
 function FilterByCity() {
-  selectMlsStatusdropdownEl1.value = "0";
+  selectMlsStatusdropdownEl1.value="0"
   FilteredByCity_listId = [];
   city =
     selectCitydropdownEl1.options[selectCitydropdownEl1.selectedIndex].text;
@@ -62,18 +70,24 @@ function FilterByCity() {
   if (city) {
     Apidata.bundle &&
       Apidata.bundle.filter((i) => {
+
         if (i.City === city) {
           FilteredByCity_listId.push(i);
-          listMainEl.innerHTML = "";
-          listAll(FilteredByCity_listId, pagination);
+          listMainEl.innerHTML=''
+          listAll(FilteredByCity_listId,pagination);
         }
       });
   }
 }
 
+
+
+
+
+
 //get MLS Status from drop down filter
 function FilterByMlsStatus() {
-  selectCitydropdownEl1.value = "0";
+  selectCitydropdownEl1.value="0"
   // location.reload();
   FilteredByCity_MlsStatus = [];
 
@@ -87,12 +101,19 @@ function FilterByMlsStatus() {
       Apidata.bundle.filter((i) => {
         if (i.MlsStatus === MLS_status) {
           FilteredByCity_MlsStatus.push(i);
-          listMainEl.innerHTML = "";
-          listAll(FilteredByCity_MlsStatus, pagination);
+          listMainEl.innerHTML=''
+          listAll(FilteredByCity_MlsStatus,pagination);
         }
       });
   }
 }
+
+
+
+
+
+
+
 
 var getApiData = (value) => {
   if (!value) {
@@ -108,9 +129,9 @@ var getApiData = (value) => {
     .then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-          Apidata = data;
-          listMainEl.innerHTML = "";
-          listAll(data, pagination);
+        Apidata = data;
+        listMainEl.innerHTML=''
+        listAll(data,pagination);
         });
       }
     })
@@ -120,31 +141,77 @@ var getApiData = (value) => {
 };
 getApiData();
 
-function listAll(data, pagination) {
-  var apidatabundle = data.bundle;
 
-  if (data.status === 200) {
-    apidatabundle = data.bundle;
-    pageCard(apidatabundle);
-  } else if (typeof data == "object") {
-    apidatabundle = data;
-    pageCard(apidatabundle);
+
+
+
+
+
+
+function listAll(data,pagination) {
+  var apidatabundle = data.bundle
+
+
+
+if(pagination == false){
+if(data.status === 200){
+  apidatabundle = data.bundle
+  pageCard(apidatabundle)
+}else if (typeof data == 'object'){
+    apidatabundle = data
+    pageCard(apidatabundle)
+    }
   }
+
+
+
+[pageBtn1El,pageBtn2El].forEach((ele)=>{
+  ele.addEventListener('click',(event)=>{
+        listMainEl.innerHTML=''
+         startIndex = ((event.target.textContent)-1) * itemsPerPage
+         endIndex=startIndex + itemsPerPage
+        pageData = apidatabundle.slice(startIndex,endIndex)
+        pageCard(pageData)
+  })
+})
 }
 
-function pageCard(apidatabundle) {
-  // if (Object.values(apidatabundle).length === 1) {
-  //   document.querySelector(".pagination-main").style.display = "none";
-  // } else {
-  //   document.querySelector(".pagination-main").style.display = "flex";
-  // }
 
-  Object.values(apidatabundle).map((i) => {
+
+
+
+
+function pageCard(apidatabundle){
+  
+  if(Object.values(apidatabundle).length === 1){
+    document.querySelector(".pagination-main").style.display='none'
+  }
+  else{
+    document.querySelector(".pagination-main").style.display='flex'
+  }
+
+  Object.values(apidatabundle).map((i)=>{
     //list-card (overall)
     var listCardEl = document.createElement("div");
     listCardEl.classList = "list-card center";
-    listCardEl.addEventListener("click", (event) => popUpListing(i, event));
+    listCardEl.addEventListener('click',(event)=>popUpListing(i,event))
     listMainEl.appendChild(listCardEl);
+
+
+    //save to favourites
+    var openHeartListEl = document.createElement("div");
+    openHeartListEl.classList="list-heart"
+    openHeartListEl.innerHTML =
+      '<i class="fa fa-heart-o" style="font-size:24px;"></i>';
+    // var HeartData=i
+    if(listingLSdata[i.ListingId]){
+      openHeartListEl.innerHTML =
+      '<i class="fa fa-heart" style="font-size:24px;"></i>';
+    }
+    openHeartListEl.addEventListener('click',(event)=>heartLocalStorage(i,event))
+    listCardEl.appendChild(openHeartListEl);
+
+
 
     // -----------------------------------
     //address line1 main (Unit num, streetname)
@@ -157,6 +224,7 @@ function pageCard(apidatabundle) {
     listImgEl.alt = "image";
     listImgEl.classList = "list-img center";
     listCardEl.appendChild(listImgEl);
+    
 
     //address icon
     var addressiconEl = document.createElement("span");
@@ -205,6 +273,7 @@ function pageCard(apidatabundle) {
 
     listCardEl.appendChild(addressMain2El);
 
+
     // //list-Bed
     var BedBathParkMainEl = document.createElement("div");
     BedBathParkMainEl.classList = "list-BedBathPark-main center";
@@ -218,7 +287,7 @@ function pageCard(apidatabundle) {
     listBedEl.textContent = i.BedroomsTotal;
     BedBathParkMainEl.appendChild(BedLabelEl);
     BedBathParkMainEl.appendChild(listBedEl);
-    listCardEl.appendChild(BedBathParkMainEl);
+    listCardEl.appendChild(BedBathParkMainEl)
 
     var BathLabelEl = document.createElement("span");
     BathLabelEl.classList = "list-bath-label";
@@ -250,10 +319,12 @@ function pageCard(apidatabundle) {
     listPriceTriangleEl.classList = "list-triangle";
     var listpriceEl = document.createElement("div");
     listpriceEl.classList = "list-price";
-    listpriceEl.textContent = "$ " + i.OriginalListPrice.toLocaleString();
+    listpriceEl.textContent =
+      "$ " + i.OriginalListPrice.toLocaleString();
     listPriceMainEl.appendChild(listPriceTriangleEl);
     listPriceMainEl.appendChild(listpriceEl);
     listCardEl.appendChild(listPriceMainEl);
+
 
     //list-YearBuilt
     var yearBuiltMainEl = document.createElement("div");
@@ -268,6 +339,7 @@ function pageCard(apidatabundle) {
     yearBuiltMainEl.appendChild(listyearBuiltEl);
     listCardEl.appendChild(yearBuiltMainEl);
 
+    
     // //list-mlsStatus
     var MlsStatusMainEl = document.createElement("div");
     MlsStatusMainEl.classList = "list-mlsStatus-main center";
@@ -281,51 +353,175 @@ function pageCard(apidatabundle) {
     MlsStatusMainEl.appendChild(listmlsStatusEl);
     listCardEl.appendChild(MlsStatusMainEl);
 
-    // //listid
-    //   var ListIDListEl = document.createElement("div");
-    //   ListIDListEl.classList = "list-listId";
-    //   // // ListIDListEl.setAttribute('style','opacity:0.0;')
-    //   ListIDListEl.textContent = "|" + i.ListingId;
-    //   listCardEl.appendChild(ListIDListEl);
 
-    listMainEl.appendChild(listCardEl);
+    // //listid
+  //   var ListIDListEl = document.createElement("div");
+  //   ListIDListEl.classList = "list-listId";
+  //   // // ListIDListEl.setAttribute('style','opacity:0.0;')
+  //   ListIDListEl.textContent = "|" + i.ListingId;
+  //   listCardEl.appendChild(ListIDListEl);
+
+    listMainEl.appendChild(listCardEl); 
+  })
+
+}
+
+
+
+
+function heartLocalStorage(i,event) {
+  listingLSdata[i.ListingId]={
+      ListingId:i.ListingId,
+      City:i.City,
+      Country:i.Country,
+      Unit:i.UnitNumber,
+      StreetName:i.StreetName,
+      OriginalListPrice:i.OriginalListPrice,
+      MlsStatus:i.MlsStatus,
+      BedroomsTotal:i.BedroomsTotal,
+      BathroomsFull:i.BathroomsFull,
+      GarageSpaces:i.GarageSpaces,
+      YearBuilt:i.YearBuilt
+  }
+  var heartListnerEl = event.target.classList[1];
+      if (heartListnerEl.trim() == "fa-heart-o") {
+        event.target.classList.remove('fa-heart-o')
+        event.target.classList.add('fa-heart')
+      }
+        else if (heartListnerEl.trim() == "fa-heart"){
+          event.target.classList.remove('fa-heart')
+          event.target.classList.add('fa-heart-o')
+          delete listingLSdata[i.ListingId]
+        }  
+        localStorage.setItem("ListingLS", JSON.stringify(listingLSdata));
+      
+}
+
+
+
+
+ function popUpListing(i,event) {
+
+  // Selected_ListId = (event.target.textContent).split('|')[1]
+  if(event.target.classList[0] == "fa"){
+    return
+  }
+    modalMainEl.style.display = "flex";
+    var image = 0
+    
+
+    document.querySelector(".modal-image-left").addEventListener('click', ()=>{
+      if(image-1 < 0){
+        image=0
+      }
+      else{
+        image-=1
+      }
+      document.querySelector(".modal-image").src=imagedata[i.ListingId][image]
+    })
+
+    document.querySelector(".modal-image").src=imagedata[i.ListingId][image]
+    document.querySelector(".modal-image-right").addEventListener('click', ()=>{
+      if(image+1 > 2){
+        image=2
+      }
+      else{
+        image+=1
+      }
+      document.querySelector(".modal-image").src=imagedata[i.ListingId][image]
+    })
+
+    document.querySelector(".modal-list-id").textContent = i.ListingId;
+    document.querySelector(".modal-list-mlsStatus").textContent =
+    i.MlsStatus;
+    document.querySelector(".modal-list-price").textContent =
+    "$ " + i.OriginalListPrice.toLocaleString();;
+    document.querySelector(".modal-list-PropertyType").textContent =
+    i.PropertyType;
+    document.querySelector(".modal-list-YearBuilt").textContent =
+    i.YearBuilt;
+    document.querySelector(".modal-list-Bedrooms").textContent =
+    i.BedroomsTotal;
+    document.querySelector(".modal-list-LotSizeDimensions").textContent =
+    i.LotSizeDimensions;
+    document.querySelector(".modal-list-PropertyType").textContent =
+    i.PropertyType;
+    // document.querySelector(".modal-list-YearBuilt").textContent =
+    // i.YearBuilt;
+    // document.querySelector(".modal-list-BedroomsTotal").textContent =
+    // i.BedroomsTotal;
+    document.querySelector(".modal-list-ListAgentName").textContent =
+    i.ListAgentFullName;
+
+   var apiUrl =
+  "https://www.google.com/maps/embed/v1/place?key=AIzaSyCy8PFgy7uGcwPxftTH3mYHuGuUDjb_gnM&q="+i.City
+
+  document.querySelector(".google-maps").src = apiUrl;
+
+  
+  
+  return Selected_ListId
+}
+   
+
+
+
+
+
+function closePopUp(event) {
+  if (event.target.innerHTML == "×") {
+    modalMainEl.style.display = "none";
+  }
+}
+modalCloseBtnEl.addEventListener("click",closePopUp);
+
+
+
+
+function favouritesLS(){
+  selectCitydropdownEl1.value="0"
+  selectMlsStatusdropdownEl1.value='0'
+    listMainEl.innerHTML=''
+    listAll(listingLSdata,pagination)
+}
+favouritesEl.addEventListener('click',favouritesLS)
+
+
+function initMap() {
+  // Create a map object and specify the DOM element for display.
+  var map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
   });
 }
 
-function popUpListing(i, event) {
-  Selected_ListId = event.target.textContent.split("|")[1];
-  if (event.target.classList[0] == "fa") {
-    return;
-  }
-  modalMainEl.style.display = "flex";
+function initMap() {
+  const myLatLng = { lat: 43.7001, lng: -79.4163 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: myLatLng,
+  });
 
-  document.querySelector(".modal-list-price").textContent = i.StreetName;
-  document.querySelector(".modal-list-PropertyType").textContent = i.City;
-  document.querySelector(".modal-list-YearBuilt").textContent = i.Country;
-  document.querySelector(".modal-list-Bedrooms").textContent = i.MlsStatus;
-  document.querySelector(".modal-list-OriginalListPrice").textContent =
-    i.OriginalListPrice;
-  document.querySelector(".modal-list-PropertyType").textContent =
-    i.PropertyType;
-  document.querySelector(".modal-list-YearBuilt").textContent = i.YearBuilt;
-  document.querySelector(".modal-list-BedroomsTotal").textContent =
-    i.BedroomsTotal;
-  document.querySelector(".modal-list-ListAgentLastName").textContent =
-    i.ListAgentLastName;
-
-  return Selected_ListId;
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Hello World!",
+  });
 }
 
-// function closePopUp(event) {
-//   if (event.target.innerHTML == "×") {
-//     modalMainEl.style.display = "none";
-//   }
-// }
-// modalCloseBtnEl.addEventListener("click", closePopUp);
+window.initMap = initMap;
 
-function favouritesLS() {
-  selectCitydropdownEl1.value = "0";
-  selectMlsStatusdropdownEl1.value = "0";
-  listMainEl.innerHTML = "";
-}
-favouritesEl.addEventListener("click", favouritesLS);
+var getGoogleApiData = function (i) {
+  var apiUrl =
+    "https://www.google.com/maps/embed/v1/place?key=AIzaSyCy8PFgy7uGcwPxftTH3mYHuGuUDjb_gnM&q=" +
+    i.City;
+
+  document.querySelector(".google-maps").src = apiUrl;
+
+  initMap();
+};
+
+
+
+
+
