@@ -19,6 +19,14 @@
 
 * As a user, When I click on pagination on the bottom of the listings page, it should display 5 items per page.
 
+* As a user, when I click on the dropdown in the open house page, it should display a list of cities where open houses are available.
+
+* As a user, when I choose one city, it should display a picture of the listing, date and time of the open house, and the details of the listing including address, list price, year built, lot size, number of bedrooms, number of bathrooms, and direction.
+
+* As a user, when I want to be contacted about a open house, I can fill out the form and submit it.
+
+* As a user, when I click on 'View Submission', I should see my form submission details.
+
 * As a user, when I click on dropdown menu in members page, it should display a list of top members fetched using member details API.
 
 * As a user, when I choose one member, it should dispaly a card along with the member full name and its details.
@@ -26,6 +34,7 @@
 * As a user, when I choose a member, it should dispaly the member image in the card from the image name that will be retrieved from the local storage.
 
 * As a user, when I click on a member, the member location will be displayed to the right of the page in google maps.
+
 
 
 
@@ -44,7 +53,7 @@
 ![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/5cbd826e-796f-4766-8980-53c58ff07708)
 
 * Open House
-Open Houses.jpeg
+[]
 
 * Agents
 
