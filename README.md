@@ -53,7 +53,10 @@
 ![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/5cbd826e-796f-4766-8980-53c58ff07708)
 
 * Open House
-[]
+![OpenHousePage1](https://github.com/divyakrishnan15/RealEstateApp/assets/130313979/b2689ecf-d24a-4bf4-961a-275683d8eb5c)
+![OpenHousePage2](https://github.com/divyakrishnan15/RealEstateApp/assets/130313979/1d03e6e3-9d9f-4247-ad97-0ff73c5ce047)
+![OpenHousePage3](https://github.com/divyakrishnan15/RealEstateApp/assets/130313979/4f589e34-ac89-418b-8327-3198b722921d)
+
 
 * Agents
 
