@@ -70,7 +70,8 @@ header h2{
 }
 #format-input{
 text-align: center;
-font-family: Georgia, 'Times New Roman', Times, serif;
+font-family: 'Times New Roman', Times, serif;
+font-size: large;
 }
 .card{
   width:100%;
@@ -81,7 +82,9 @@ h1{
   text-align: center;
   color: white;
   background-color: #59677f;
+  font-size: 30px !important;
 }
+
 .memberdata{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.5rem;
@@ -129,3 +132,8 @@ h1{
   width: 100%;
   height:300px;
 }
+
+ #footer{
+  position: relative;
+    margin-top: 35%;
+} 
