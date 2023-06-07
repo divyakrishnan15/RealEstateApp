@@ -77,6 +77,7 @@
 
 
 * Agent Office
+![agentmockup](https://github.com/divyakrishnan15/RealEstateApp/assets/130608417/57c5361b-432c-491a-a1b3-3981af994d9c)
 
 * responsive
 
