@@ -56,6 +56,10 @@
  ![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/481752af-3c08-4c37-ae28-070234b0c07e)
  ![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/b673e891-4b94-43fb-afbd-2c1bc80e32dc)
 
+* responsivesness
+![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/1ec10e17-515b-4667-92d4-3a62b46e0c29)
+![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/c04bba6f-9be7-48e9-bdab-501ed0b43424)
+![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/69268477-f260-4b86-ab0d-e5b4f3195a48)
 
 
 
