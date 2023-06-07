@@ -150,7 +150,7 @@ function createListingCard(listingData, openHouseDate, openHouseEndTime, openHou
   direction.innerHTML = 'Direction: ' + listingData.DirectionFaces;
 
 
-  let imageArray = ['AssetsOH/images/OH1.jpeg','AssetsOH/images/OH2.jpeg','AssetsOH/images/OH3.jpeg','AssetsOH/images/OH4.jpeg','AssetsOH/images/OH5.jpeg','AssetsOH/images/OH6.jpeg','AssetsOH/images/OH7.jpeg','AssetsOH/images/OH8.jpeg','AssetsOH/images/OH9.jpeg','AssetsOH/images/OH10.jpeg']
+  let imageArray = ['OpenHouse/AssetsOH/images/OH1.jpeg','OpenHouse/AssetsOH/images/OH2.jpeg','OpenHouse/AssetsOH/images/OH3.jpeg','OpenHouse/AssetsOH/images/OH4.jpeg','OpenHouse/AssetsOH/images/OH5.jpeg','OpenHouse/AssetsOH/images/OH6.jpeg','OpenHouse/AssetsOH/images/OH7.jpeg','OpenHouse/AssetsOH/images/OH8.jpeg','OpenHouse/AssetsOH/images/OH9.jpeg','OpenHouse/AssetsOH/images/OH10.jpeg']
 
   var randomImage = imageArray[Math.floor(Math.random()*imageArray.length)];
 
