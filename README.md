@@ -19,6 +19,16 @@
 
 * As a user, When I click on pagination on the bottom of the listings page, it should display 5 items per page.
 
+* As a user, when I click on dropdown menu in members page, it should display a list of top members fetched using member details API.
+
+* As a user, when I choose one member, it should dispaly a card along with the member full name and its details.
+
+* As a user, when I choose a member, it should dispaly the member image in the card from the image name that will be retrieved from the local storage.
+
+* As a user, when I click on a member, the member location will be displayed to the right of the page in google maps.
+
+
+
 
 
 
@@ -39,6 +49,8 @@ Open Houses.jpeg
 * Agents
 
 * Members
+![member page](https://github.com/divyakrishnan15/RealEstateApp/assets/130253087/7eb1e86d-beb1-43a0-b185-8e8a4da26953)
+
 
 * Agent Office
 
@@ -46,6 +58,8 @@ Open Houses.jpeg
 
 * local storage
 ![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/71d86a3a-3a16-4afb-97b8-2db94b62957c)
+![localstorage](https://github.com/divyakrishnan15/RealEstateApp/assets/130253087/1b73f089-aa5b-435c-b872-a3edc212041c)
+
 
 * Modal
 ![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/9fe2f05b-924a-4f9e-ac60-698ee2f09ec2)
@@ -64,6 +78,14 @@ Open Houses.jpeg
 ![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/1ec10e17-515b-4667-92d4-3a62b46e0c29)
 ![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/c04bba6f-9be7-48e9-bdab-501ed0b43424)
 ![image](https://github.com/divyakrishnan15/RealEstateApp/assets/40469923/69268477-f260-4b86-ab0d-e5b4f3195a48)
+![memresponsiveness](https://github.com/divyakrishnan15/RealEstateApp/assets/130253087/5844304a-897e-4142-9347-0fce218ef8f1)
+
+* dropdown
+![dropdown menu](https://github.com/divyakrishnan15/RealEstateApp/assets/130253087/5ec485ea-8a7a-4add-b57f-10aae24e0f25)
+
+* googlemap location
+![location](https://github.com/divyakrishnan15/RealEstateApp/assets/130253087/ecb57139-4e6b-440d-853a-8dd205b81555)
+
 
 
 
