@@ -6,7 +6,7 @@ const imagedata = {
   ],
 
   "5dba1fb94aa4055b9f296949": [
-    "./ListingAssets/2/front.png",
+    "./ListingAssets/2/front1.png",
     "./ListingAssets/2/living.jpg",
     "./ListingAssets/2/bedroom.jpg",
   ],
