@@ -21,6 +21,7 @@
 * Listings Page
 
 * Open House
+Open Houses.jpeg
 
 * Agents
 
