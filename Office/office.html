@@ -36,7 +36,7 @@
             <div id="filterContainer">
                 <div>
                 <select id="officeList">
-                    <option value=10>Show Options</option>
+                    <option value=10>Select</option>
                     <option value=0>Wyoming</option>
                     <option value=1>West Virginia</option>
                     <option value=2>North Carolina</option>
@@ -53,7 +53,9 @@
         
              </div>
      
-    </div>   
+    </div> 
+    
+<div class="cards">
         <div id="mediaCard">
         </div>
    
@@ -74,7 +76,27 @@
     
     <div class="sign-in-form">
   
-  
+        <h2 id="contact-form" class="contact-us">Want us to get in touch with you?</h2>
+      <form>
+        <ul>
+          <li>
+            <label class="user-input">Name:</label>
+            <input type="text" id="name" name="user-name">
+          </li>
+          <li>
+            <label class="user-input-two">e-mail id:</label>
+            <input type="text" id="email" name="user-email">
+          </li>
+          <li>
+            <label class="user-input-three">Message</label>
+            <input type="text" id="message" name="user-message">
+          </li>
+
+        </ul>
+        <div class="submit-btn">
+          <button type="submit" id="subtmit-button">SUBMIT</button>
+        </div>
+      </form>
   
     </div>
 
@@ -82,6 +104,7 @@
 
 <p id="searchHistory" class="search"></p>
 
+</div>
 
 <footer id="footer" class="bg-slate-500 py-4 my-6">
     <div class="container mx-auto px-2 text-white">

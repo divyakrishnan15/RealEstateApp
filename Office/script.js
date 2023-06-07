@@ -8,13 +8,39 @@ var officeCities = ["wyoming", "West Virginia", " North Carolina ", " Wisconsin"
 var mapMain = document.getElementsByClassName("map-main");
 var gmapCanvas = document.getElementById("gmap_canvas");
 var searchHistory = document.getElementById("searchHistory");
-var mainContainer = document.getElementById("main-container")
-function DefaultScreen(){
+var cards = document.querySelector(".cards");
+var contactForm = document.getElementById("sign-in");
+var Name = document.getElementById("name");
+var email = document.getElementById("email");
+var msg =document.getElementById("message");
+var submitBtn = document.getElementById("subtmit-button")
+var title = document.getElementById("title")
 
+submitBtn.addEventListener("click",function(event){
+  event.preventDefault();
+
+  var userName = Name.value.trim();
+  var userEmail = email.value.trim();
+  var message = msg.value.trim();
+
+  localStorage.setItem("userName", userName);
+  localStorage.setItem("userEmail", userEmail);
+  localStorage.setItem("message", message);
+});
+
+function storedUserInfo(){
+var userName = localStorage.getItem("userName");
+var userEmail = localStorage.getItem("userEmail");
+var userMessage = localStorage.getItem("message");
+
+}
+storedUserInfo();
+
+function DefaultScreen(){
 var introElem = document.createElement('div')
 var introText = document.createElement('p')
 introText.classList.add("intro")
-introText.innerHTML = "Hello! Welcome to the offices page of Realty Reach. We have multiple office space scattered across USA that focus on sustainable and eco friendly designs. When you choose Realty Reach, we make it our personal mission to ensure you reach your forever home for the best deals available in the market.  Feel free to walk into any of our spacious and welcoming office spaces anytime from Monday to Saturday between 8am-8pm. Check out the closest office to you by choosing your State/Province in the dropbox above. "
+introText.innerHTML = "Hello! Welcome to the offices page of Realty Reach. We have multiple office space scattered across USA that focus on sustainable and eco friendly designs. When you choose Realty Reach, we make it our personal mission to ensure you reach your forever home for the best deals available in the market.  Feel free to walk into any of our spacious and welcoming office spaces anytime from Monday to Saturday between 8am-8pm. Check out the closest office to you by choosing your State/Province in the dropbox above. Fill in your name and email id, we will get in touch with you!"
 var fillForm = document.getElementById("sign-in")
 fillForm.classList.add("sign-in-form")
 introElem.append(fillForm)
@@ -24,12 +50,20 @@ imageElem.src = "https://officesnapshots.com/wp-content/uploads/2016/01/ovg-offi
 introElem.append(introText)
 mediaCard.append(introElem)
 mediaCard.append(imageElem)
+var msgToUser = document.createElement("p")
+msgToUser.classList.add("storage")
+msgToUser.textContent = "Hi "+localStorage.getItem ("userName")+" ! Great to see you here. We will be in touch with you within five business days.";
+mediaCard.append(msgToUser)
 mapCard.style.display = "none";
 iframeMap.style.display = "none";
-// gmapCanvas.style.display = "none";
-}
 
+
+}
+//call the default screen function
 DefaultScreen();
+
+
+//when an option is selected from the drop down, runs the event listener and displays the cards with info
 
 selectEl.addEventListener('change', function(event){
   event.preventDefault(); 
@@ -63,8 +97,6 @@ selectEl.addEventListener('change', function(event){
         "https://gbdmagazine.com/wp-content/uploads/2020/08/tmk-law-office-studio-ma-gbd-magazine-03.jpg"
 
       ];
-
-
 
       var j = x;
       
@@ -135,23 +167,9 @@ selectEl.addEventListener('change', function(event){
     
       mediaCard.append(divRow);
      
-
-      var searchHistory = [];
       var searchedStates = String(data.bundle[x].OfficeStateOrProvince);
-      localStorage.setItem("searchedStates",searchedStates );
-      console.log(searchedStates)
-  
-      searchHistory.push(searchedStates);
-  
-      for (var i=0; i<searchHistory.length; i++){
-        var searchStates = searchHistory[i];
-        console.log("CHECKING");
-        console.log(searchStates);
-        var buttonEl = document.createElement("button");
-        buttonEl.classList.add("searchedButton")
-        buttonEl.textContent = searchStates;
-        mediaCard.appendChild(buttonEl)
-      }
+      storeState(searchedStates)
+
 
     });
   return;
@@ -159,9 +177,32 @@ selectEl.addEventListener('change', function(event){
 
 });
 
+function storeState (searchedStates){
 
+var states = JSON.parse(localStorage.getItem("searchedStates"));
+if (states !== null){
+  states.push(searchedStates)
+  localStorage.setItem("searchedStates", JSON.stringify(states));
+} else{
+  localStorage.setItem("searchedStates", JSON.stringify([searchedStates]))
+}
+renderStates()
+}
 
-function SearchedOffices (){
+function renderStates(){
+  var states = JSON.parse(localStorage.getItem("searchedStates"));
+  var statesHistory = document.getElementById("searchHistory");
+  statesHistory.classList.add("search");
+  statesHistory.innerHTML = " ";
+
+states.forEach( function (state){
+var stateElem = document.createElement("button");
+// stateElem.textContent = state;
+
+// statesHistory.appendChild(stateElem);
+});
 
 }
+
+
 
